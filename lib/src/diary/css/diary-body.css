@@ -1,0 +1,26 @@
+.diary-body{
+    width: 900px;
+    float: left;
+}
+
+.diary-body ul{
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.diary-body li{
+    display: block;
+    position: relative;
+    width: 14.28%;
+    float: left;
+
+    /*规定行高，垂直居中*/
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+    text-align: center;
+    color: brown;
+}
