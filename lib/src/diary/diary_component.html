@@ -22,3 +22,15 @@
         </div>
 
 </div>
+<div>
+    <h2>Event List</h2>
+
+    <p><i>Pick a event from the list</i></p>
+    <ul>
+        <li *ngFor="let event of events" (click)="selectEvent(event)">
+            {{event.name}}
+        </li>
+    </ul>
+
+    <event-detail *ngIf="selectedEvent != null" [event]="selectedEvent"></event-detail>
+</div>

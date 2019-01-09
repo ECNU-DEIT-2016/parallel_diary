@@ -3,6 +3,9 @@ import 'package:angular/angular.dart';
 import 'src/todo_list/todo_list_component.dart';
 import 'src/diary/diary_component.dart';
 import 'src/calendar/calendar_component.dart';
+import 'src/backend_serviec.dart';
+import 'src/base_event_service.dart';
+
 
 // AngularDart info: https://webdev.dartlang.org/angular
 // Components info: https://webdev.dartlang.org/components
@@ -11,7 +14,11 @@ import 'src/calendar/calendar_component.dart';
   selector: 'my-app',
   styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [TodoListComponent,DiaryComponent,CalendarComponent],
+  directives: [TodoListComponent,BaseEventComponent,CalendarComponent],
+  providers: [
+    ClassProvider(BackendService),
+    ClassProvider(EventService),
+  ]
 )
 class AppComponent {
   // Nothing here yet. All logic is in TodoListComponent.
