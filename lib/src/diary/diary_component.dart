@@ -21,25 +21,35 @@ import '../base_event_service.dart';
     coreDirectives,
     formDirectives,
 
-    EventDetailComponent
+    MaterialSliderComponent,
+    EventDetailComponent,
 
   ],
-  providers: [ClassProvider(EventService)],
+  providers: [ClassProvider(EventService),
+  ],
+
 )
+
 class BaseEventComponent implements OnInit {
-  List<Event> events;
+  static List<Event> events;
   Event selectedEvent;
   final EventService _eventService;
 
   BaseEventComponent(this._eventService);
 
-  //HeroListComponent(this._heroService);
-
   void ngOnInit() async {
     events = await _eventService.getAll();
   }
 
-  void selectEvent(Event event) {
+
+  void selectEvent(Event event
+    //  ,MaterialCheckboxComponent cb
+      ) {
+    //if(cb.checked){
+    //  selectedEvent=null;
+  //  }
+//      else
+
     selectedEvent = event;
   }
 }

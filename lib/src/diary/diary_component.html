@@ -1,4 +1,24 @@
 
+<div><div>
+    <h2>Event List</h2>
+
+    <p><i>Pick a event from the list</i></p>
+    <ul>
+        <div *ngFor="let event of events" ><material-checkbox class="checkbox" (click)="selectEvent(event)">
+            {{event.name}}</material-checkbox>
+        </div>
+
+
+    </ul>
+</div>
+    <div>
+        <event-detail *ngIf="selectedEvent != null" [event]="selectedEvent"></event-detail>
+    </div>
+
+
+</div>
+
+
 <div id="diary">
         <!-- 星期： SUN - SAT标题 -->
         <div class="diary-body" >
@@ -22,15 +42,4 @@
         </div>
 
 </div>
-<div>
-    <h2>Event List</h2>
 
-    <p><i>Pick a event from the list</i></p>
-    <ul>
-        <li *ngFor="let event of events" (click)="selectEvent(event)">
-            {{event.name}}
-        </li>
-    </ul>
-
-    <event-detail *ngIf="selectedEvent != null" [event]="selectedEvent"></event-detail>
-</div>

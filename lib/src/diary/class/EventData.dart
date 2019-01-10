@@ -2,7 +2,7 @@ import 'Time.dart';
 import 'dart:async';
 import 'package:sqljocky5/sqljocky.dart';
 
-class Event{
+class EventData{
   int id;
   String name;
   Time startTime;

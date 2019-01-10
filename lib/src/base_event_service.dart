@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'backend_serviec.dart';
+import 'backend_service.dart';
 import 'base_event.dart';
 
 class EventService{
