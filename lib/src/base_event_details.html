@@ -20,6 +20,17 @@
     LengthOfTime:
     <p>{{event.lasting_string}}</p>
 </div>
+<div>
+    Type:
+    <p>{{event.type}}</p>
+</div>
+
+ <material-select width="2" class="bordered-list">
+    <material-select-item *ngFor="let p of ['learn', 'game', 'rest','meal']"
+                          (trigger)="proto = p"
+                          [selected]="proto == p"
+    (click)="typeChange(p)">{{p}}</material-select-item>
+</material-select>
 
 <material-fab raised class="red" (click)="deleteEvent()">
     <material-icon icon="delete"  ></material-icon>

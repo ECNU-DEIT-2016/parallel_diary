@@ -5,17 +5,16 @@ import 'base_event.dart';
 
 class BackendService {
 
-  static final _mockEvents = [
+  final _mockEvents = [
     Events('coding','i like coding',2,18,36,"game"),
     Events('sleep', 'i hate sleep',3,6,24,"rest"),
     Events('learn', 'Learning makes me happy!',4,8,32,"learn"),
   ];
 
-  var conn;
   List<Events>events;
 
     Future<List<Events>> transform() async {
-      var data = await TraverseAllData(conn);
+      var data = await TraverseAllData();
       for(EventData ed in data){
         Events newE=new Events(ed.name, ed.description, (ed.startTime.hour/24).floor(),
             (ed.startTime.hour%24)*4+(ed.startTime.minute/15).floor(),
@@ -28,16 +27,16 @@ class BackendService {
 
 
   Future<List<Events>> getAll(type) async {
-      //TraverseAllData(conn);
+      TraverseAllData();
 
-      //return transform();
+      return transform();
     return _mockEvents;
   }
 
 
 
   //从数据库中读取所有的事件数据，并返回EvenData列表
-  Future<List<EventData>> TraverseAllData(MySqlConnection conn) async{
+  Future<List<EventData>> TraverseAllData() async{
     var s = ConnectionSettings(
       user: "deit2016",
       password: "deit2016@ecnu",
@@ -46,7 +45,7 @@ class BackendService {
       db: "deit2016db_10164507136",
     );
     print("Opening connection ...");
-    conn = await MySqlConnection.connect(s);
+    var conn = await MySqlConnection.connect(s);
     print("正在从数据库中调取数据。。");
     List<EventData> list;
     EventData temp;
