@@ -1,11 +1,18 @@
 
+
+
 <div><div>
     <h2>Event List</h2>
 
+    <material-fab raised class="red" (click)="addEvent()">
+        <material-icon icon="add"></material-icon>
+    </material-fab>
+
     <p><i>Pick a event from the list</i></p>
     <ul>
-        <div *ngFor="let event of events" ><material-checkbox class="checkbox" (click)="selectEvent(event)">
-            {{event.name}}</material-checkbox>
+        <div *ngFor="let event of events"  (click)="selectEvent(event)">
+
+            {{event.name}}
         </div>
 
 
@@ -20,26 +27,28 @@
 
 
 <div id="diary">
-        <!-- 星期： SUN - SAT标题 -->
-        <div class="diary-body" >
-            <ul>
-                <li>SUN</li>
-                <li>MON</li>
-                <li>TUE</li>
-                <li>WED</li>
-                <li>THU</li>
-                <li>FRI</li>
-                <li>SAT</li>
-            </ul>
-        </div>
+    <!-- 星期： SUN - SAT标题 -->
+    <div class="diary-body" >
+        <ul>
+            <li>SUN</li>
+            <li>MON</li>
+            <li>TUE</li>
+            <li>WED</li>
+            <li>THU</li>
+            <li>FRI</li>
+            <li>SAT</li>
+        </ul>
+    </div>
 
-        <!-- 日期： 共6*7格，用dart生成，angular自动生成li标签 -->
-        <div class="diary-list">
-            <ul>
-                <li>
-                </li>
-            </ul>
-        </div>
 
 </div>
 
+<div id="wrapper">
+    <canvas id="stage" width="800" height="600">
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+    </canvas>
+</div>

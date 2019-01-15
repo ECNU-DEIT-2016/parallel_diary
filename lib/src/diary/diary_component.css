@@ -1,2 +1,12 @@
 @import url("css/diary-body.css");
 
+#wrapper {
+    width: 800px;
+    margin: auto;
+    border: solid thin black;
+}
+
+#stage{
+    width:800px;
+    height: 600px;
+}

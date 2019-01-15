@@ -5,11 +5,11 @@ import 'base_event.dart';
 
 class EventService{
   final BackendService _backendService;
-  List<Event>events;
+  List<Events>events;
 
   EventService(this._backendService);
-  Future<List<Event>> getAll() async {
-    events = await _backendService.getAll(Event);
+  Future<List<Events>> getAll() async {
+    events = await _backendService.getAll(Events);
     return events;
   }
 }

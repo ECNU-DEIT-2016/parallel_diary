@@ -6,8 +6,3 @@ html, body {
     height: 100%;
 }
 
-#wrapper {
-    width: 900px;
-    margin: auto;
-    border: solid thin black;
-}

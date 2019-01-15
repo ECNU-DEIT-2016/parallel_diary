@@ -1,10 +1,26 @@
 
 <div>Id: {{event.my_id}}</div>
 <div>
-    NAME:
-    <input [(ngModel)]="event.name">
+    Event:
+    <input  [(ngModel)]="event.name">
 </div>
 <div>
-    DESCRPTION:
+    Description
     <input [(ngModel)]="event.desc">
 </div>
+<div>
+    BeginDate:
+    <p>{{event.dayName[event.begin_date]}}</p>
+</div>
+<div>
+    BeginTime:
+    <p>{{event.begin_string}}</p>
+</div>
+<div>
+    LengthOfTime:
+    <p>{{event.lasting_string}}</p>
+</div>
+
+<material-fab raised class="red" (click)="deleteEvent()">
+    <material-icon icon="delete"  ></material-icon>
+</material-fab>
